@@ -30,11 +30,11 @@ const HeroSlider = () => {
     <Swiper
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
-      className="h-screen  w-full"
+      className="h-screen w-full "
     >
       {slides.map((slide) => {
         return (
-          <SwiperSlide className="relative h-full w-full flex justify-center items-center ">
+          <SwiperSlide className="relative h-screen w-full flex justify-center items-center ">
             <div className="z-20 text-white text-center">
               <p>See our rooms</p>
               <h1 className="text-[32px] lg:text-[68px] max-w-[920px] font-teritary tracking-[5px] mb-6 uppercase">
@@ -44,7 +44,7 @@ const HeroSlider = () => {
                 {slide.btnText}
               </button>
             </div>
-            <div className="absolute top-0 w-full h-full z-0">
+            <div className="absolute top-0 bottom-0 w-full h-screen z-0 ">
               <img src={slide.bg} alt="" />
             </div>
 

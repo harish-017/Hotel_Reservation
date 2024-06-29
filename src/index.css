@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: black;
-}
-
 @layer base {
   body {
     @apply font-secondary text-primary;
+    height: 300vh;
   }
   input::placeholder {
     @apply text-primary;
