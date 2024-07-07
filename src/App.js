@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import RoomDetails from "./components/RoomDetails";
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rooms/:id" element={<Rooms />} />
+        <Route path="/rooms/:id" element={<RoomDetails />} />
       </Routes>
       <Footer />
     </div>

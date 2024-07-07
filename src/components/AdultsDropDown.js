@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Menu } from "@headlessui/react";
-import { BsChevronBarDown } from "react-icons/bs";
+import { BsChevronDown } from "react-icons/bs";
+import { RoomContext } from "../context/RoomContext";
+
 const list = [
   { name: "1 adults" },
   { name: "2 adults" },
@@ -9,12 +11,13 @@ const list = [
 ];
 
 const AdultsDropDown = () => {
-  const [adults, setAdults] = useState(0);
+  const { adults, setAdults } = useContext(RoomContext);
+
   return (
     <Menu as="div" className="bg-whtie relative w-full h-full">
       <Menu.Button className="h-full w-full flex items-center justify-between px-8">
         {adults === 0 ? "0 adults" : `${adults} adults`}
-        <BsChevronBarDown className="text-base text-accent-hover" />
+        <BsChevronDown className="text-base text-accent-hover" />
       </Menu.Button>
       <Menu.Items
         as="ul"
@@ -24,6 +27,7 @@ const AdultsDropDown = () => {
           <Menu.Item
             as="li"
             className="border-b last-of-type:border-b-0 h-12 hover:text-white  hover:bg-accent-hover w-full flex justify-center text-center items-center cursor-pointer"
+            onClick={() => setAdults(Number(item.name[0]))}
           >
             {item.name}
           </Menu.Item>

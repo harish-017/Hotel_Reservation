@@ -1,17 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CheckIn from "./CheckIn";
 import CheckOut from "./CheckOut";
 import AdultsDropDown from "./AdultsDropDown";
 import KidsDropDown from "./KidsDropDown";
+import { RoomContext } from "../context/RoomContext";
 
 const BookForm = () => {
-  const [loading, setLoading] = useState(false);
-
-  const handleClick = () => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
+  const { handleClick } = useContext(RoomContext);
 
   return (
     <form className="h-[300px] lg:h-[70px]  w-full">
